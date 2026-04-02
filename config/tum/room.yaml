@@ -1,0 +1,12 @@
+inherit: "config/base.yaml"
+
+dataset:
+  image_folder: "/home/grl/datasets/tum/rgbd_dataset_freiburg1_room/rgb/"
+  save_path: "tum/room"
+
+tracking:
+  submap_size: 4 #8
+  max_loops: 1
+
+mapping:
+  viewer_mode: "none"

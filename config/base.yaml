@@ -1,0 +1,95 @@
+dataset:
+  downsample_factor: -1
+  save_every: -1
+
+  #####################################################  
+  # save_path_parent: "none"
+  # save_path_parent: "results/full"
+
+  ###### ablation ######
+  # save_path_parent: "results/wo_lc"  # w/o loop closure, PGO, map adjustment
+  # save_path_parent: "results/wo_poseopt"  # w/o pose optimization using GS (disable keyframe.step() in scene_model.py)
+  # save_path_parent: "results/wo_sample"  # w/o pixle sampling using DoG for Gaussian init, instead using uniform sampling
+  # save_path_parent: "results/wo_depthprior"  # w/o depth prior for Gaussian init/opt, instead using random depth map
+  # save_path_parent: "results/wo_poseprior"  # w/o pose prior for Gaussian init/opt, instead using last kf's pose
+  #####################################################  
+
+
+tracking:
+  # VGGT solver viewer
+  solver_vis: false
+  vis_map: true
+  vis_flow: false
+  log_results: false
+  skip_dense_log: false
+  log_path: ""
+  plot_focal_lengths: false
+
+  use_optical_flow_downsample: true
+
+  use_sim3: true
+  use_point_map: false
+
+  enable_loop_closure: true
+  # enable_loop_closure: false # (ablation: wo_lc)
+
+  min_disparity: 50.0
+  # submap_size: 16 #(8/4 for tum) #16(replica/waymo)
+  overlap_size: 1
+  # max_loops: 5 #(1 for tum) #5(replica/waymo)
+  min_sim_thres: 0.5
+  conf_threshold: 25.0  # represents percentage (e.g., 50 means filter lowest 50%)
+  
+
+mapping:
+  pyr_levels: 2
+  sh_degree: 3
+
+  ### COLMAP options
+  eval_poses: false
+  use_colmap_poses: false
+
+  ### Learning Rates
+  # keyframe params
+  lr_poses: 0.0001
+  lr_exposure: 0.0005
+  lr_depth_scale_offset: 0.0001
+  # Gaussian scene params
+  position_lr_init: 0.00005
+  position_lr_decay: 0.99998
+  feature_lr: 0.005
+  opacity_lr: 0.1
+  scaling_lr: 0.01
+  rotation_lr: 0.002
+
+  ### Training schedule and losses
+  num_iterations: 150 #30(original onthefly)
+  lambda_dssim: 0.2
+
+  depth_loss_weight_init: 0.01
+  # depth_loss_weight_init: 0  # (ablation: wo_depthprior)
+  depth_loss_weight_decay: 0.9
+
+  save_at_finetune_epoch: []
+  use_last_frame_proba: 0.2
+
+  ### Gaussian initialization options
+  init_proba_scaler: 8 #(8 for DoG) #(2 for LoG)
+
+  ### Anchor management
+  anchor_overlap: 0.3
+
+  ### Keyframe management
+  max_active_keyframes: 200
+  n_kept_frames: 20
+
+  ### Evaluation
+  test_hold: -1
+  test_frequency: 5 #-1
+  display_runtimes: false
+
+  ### Gaussian Viewer
+  viewer_mode: "none"
+  # viewer_mode: "local"
+  ip: "0.0.0.0"
+  port: 6009

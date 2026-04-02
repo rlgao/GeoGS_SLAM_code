@@ -1,0 +1,9 @@
+inherit: "config/base.yaml"
+
+dataset:
+  image_folder: "/home/grl/datasets/replica/office4/results/"
+  save_path: "replica/office4"
+
+tracking:
+  submap_size: 16
+  max_loops: 5

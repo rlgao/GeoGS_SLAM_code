@@ -1,0 +1,12 @@
+inherit: "config/base.yaml"
+
+dataset:
+  image_folder: "/home/grl/datasets/waymo/405841/FRONT/rgb/"
+  save_path: "waymo/405841"
+
+tracking:
+  # submap_size: 16
+  submap_size: 4  # for video
+  max_loops: 5
+
+  # min_disparity: 80.0  # fewer kfs

@@ -1,0 +1,9 @@
+inherit: "config/base.yaml"
+
+dataset:
+  image_folder: "/home/grl/datasets/replica/room0/results/"
+  save_path: "replica/room0"
+
+tracking:
+  submap_size: 16
+  max_loops: 5

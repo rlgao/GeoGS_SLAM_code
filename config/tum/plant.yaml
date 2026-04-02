@@ -1,0 +1,9 @@
+inherit: "config/base.yaml"
+
+dataset:
+  image_folder: "/home/grl/datasets/tum/rgbd_dataset_freiburg1_plant/rgb/"
+  save_path: "tum/plant"
+
+tracking:
+  submap_size: 8
+  max_loops: 1

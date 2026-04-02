@@ -1,0 +1,7 @@
+*.pyc
+*.ply
+*egg-info
+build
+Gaussian_Viewer.ini
+.vscode
+checkpoints/
