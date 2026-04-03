@@ -1,7 +1,11 @@
 *.pyc
 *.ply
-*egg-info
-build
+*.egg-info/
+build/
 Gaussian_Viewer.ini
-.vscode
+.vscode/
 checkpoints/
+__pycache__/
+.ipynb_checkpoints/
+ppt/
+results*/

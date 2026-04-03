@@ -113,7 +113,7 @@ def main():
 
     print("Initializing and loading VGGT model...")
     vggt_model = VGGT()
-    model_path = "/home/grl/vggt_gs_recon/checkpoints/vggt_model_1B.pt"
+    model_path = "/home/grl/GeoGS_SLAM/checkpoints/vggt_model_1B.pt"
     vggt_model.load_state_dict(torch.load(model_path))
     vggt_model.eval()
     vggt_model = vggt_model.to(device)
