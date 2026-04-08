@@ -1,9 +1,10 @@
 # GeoGS-SLAM: Online Monocular Reconstruction Using Gaussian Splatting with Geometric Priors
 
 ## Install
-```
-# refer to: vggt_gs_recon.yml
 
+Refer to: environment.yml for conda env setup.
+
+```bash
 cd GeoGS_SLAM/
 conda create -n geogs_slam python=3.12
 conda activate geogs_slam
@@ -22,12 +23,30 @@ pip install submodules/graphdecoviewer
 cd vggt_slam/
 
 chmod +x setup.sh
-./setup.sh
-# [or: do it step by step]
+./setup.sh # or: do it step by step
+```
+
+## Checkpoints
+
+Download model checkpoints from:
+
+- [VGGT](https://huggingface.co/facebook/VGGT-1B/blob/main/model.pt) 
+- [MegaLoc](https://github.com/gmberton/MegaLoc/releases/download/v1.0/megaloc.torch) 
+- [DINOv2 SALAD](https://github.com/serizba/salad/releases/download/v1.0.0/dino_salad.ckpt)
+
+and put them under checkpoints/:
+
+```
+checkpoints/
+├── dino_salad.ckpt
+├── megaloc.torch
+└── vggt_model_1B.pt
 ```
 
 ## Run
-```
+
+```bash
 bash eval/run_replica.sh
-[or: python run.py --config config/replica/office0.yaml --save_path_parent "results_tmp"]
+# or: python run.py --config config/replica/office0.yaml --save_path_parent "results_tmp"
 ```
+
