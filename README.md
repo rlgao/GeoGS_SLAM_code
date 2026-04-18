@@ -1,4 +1,19 @@
-# GeoGS-SLAM: Online Monocular Reconstruction Using Gaussian Splatting with Geometric Priors
+<div align="center">
+
+<h1>GeoGS-SLAM: Online Monocular Reconstruction Using Gaussian Splatting with Geometric Priors</h1>
+
+ICRA 2026
+
+</div>
+
+<div align="center">
+
+[![Paper](https://img.shields.io/static/v1?label=Paper&message=arXiv&color=red&logo=arxiv)](https://rlgao.github.io/geogs_slam/)
+[![Project](https://img.shields.io/badge/Project-Website-blue)](https://rlgao.github.io/geogs_slam/)
+
+</div>
+
+---
 
 ## Install
 
